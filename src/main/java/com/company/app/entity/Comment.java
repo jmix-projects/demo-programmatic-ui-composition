@@ -21,6 +21,7 @@ public class Comment {
 
     @Column(name = "TEXT")
     private String text;
+
     @JoinColumn(name = "TOPIC_ID", nullable = false)
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     private Topic topic;
