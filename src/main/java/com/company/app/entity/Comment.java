@@ -1,6 +1,8 @@
 package com.company.app.entity;
 
+import io.jmix.core.DeletePolicy;
 import io.jmix.core.entity.annotation.JmixGeneratedValue;
+import io.jmix.core.entity.annotation.OnDeleteInverse;
 import io.jmix.core.metamodel.annotation.JmixEntity;
 
 import javax.persistence.*;
@@ -21,6 +23,8 @@ public class Comment {
 
     @Column(name = "TEXT")
     private String text;
+
+    @OnDeleteInverse(DeletePolicy.CASCADE)
     @JoinColumn(name = "TOPIC_ID", nullable = false)
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     private Topic topic;

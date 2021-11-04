@@ -32,7 +32,7 @@
     </changeSet>
     <changeSet id="3" author="app">
         <addForeignKeyConstraint baseColumnNames="TOPIC_ID" baseTableName="COMMENT_"
-                                 constraintName="FK_COMMENT__ON_TOPIC" referencedColumnNames="ID"
+                                 constraintName="FK_COMMENT__ON_TOPIC" onDelete="CASCADE" referencedColumnNames="ID"
                                  referencedTableName="TOPIC"/>
     </changeSet>
 </databaseChangeLog>
